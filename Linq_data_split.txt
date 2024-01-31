@@ -1,0 +1,34 @@
+        /*        public List<Dictionary<string, object>> FilterAndTransformData()
+                {
+                    List<Dictionary<string, object>> excelData = _excelData.ReadExcelData();
+
+                    var filteredData = excelData
+                        .Where(data => data.ContainsKey("Billing Account Number") && data.ContainsKey("Payment Method*"))
+                        .GroupBy(data => data["Billing Account Number"])
+                        .Select(group =>
+                        {
+                            var transformedData = new Dictionary<string, object>();
+                            transformedData["Billing Account Number"] = group.Key;
+                            transformedData["contractor id"] = group.First().GetValueOrDefault("contractor id");
+                            transformedData["contract room1"] = group.First().GetValueOrDefault("contract room1");
+
+                            transformedData["Payment Method Type"] = group
+                                .Select(data => new Dictionary<string, object>
+                                {
+                                    ["Payment Method*"] = data["Payment Method*"],
+                                    ["Billing method*"] = data.GetValueOrDefault("Billing method*")
+                                }).ToList();
+
+                            transformedData["SPID*"] = group
+                                .Select(data => new Dictionary<string, object>
+                                {
+                                    ["SPID"] = data.GetValueOrDefault("SPID*"),
+                                    ["Service_zip code*"] = data.GetValueOrDefault("Service_zip code*"),
+                                    ["Service_address 1 (prefecture + city)*"] = data.GetValueOrDefault("Service_address 1 (prefecture + city)*")
+                                }).ToList();
+
+                            return transformedData;
+                        }).ToList();
+                    return filteredData;
+                }
+        */
